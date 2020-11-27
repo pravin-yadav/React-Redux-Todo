@@ -1,23 +1,16 @@
 import React, {useEffect, useRef, useState} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { v1 as uuid } from 'uuid';
+import {createTodo} from '../actions';
 
-
-const todos = [
-    {id: uuid(), desc: "Learn React", isComplete: true} ,
-    {id: uuid(), desc: "Learn Redux", isComplete: true},
-    {id: uuid(), desc: "Javascript", isComplete: true},
-    {id: uuid(), desc: "Learn Redux-Toolkit", isComplete: false},
-    {id: uuid(), desc: "Learn Next", isComplete: false},
-    
-]
-
-
-const Todo = () => {
+const Todo = (props) => {
     const [newTodoInput, setNewTodoInput] = useState("");
     const [editTodoInput, setEditTodoInput] = useState("");
     const [isEditMode, setIsEditMode] = useState(false);
     const editInput = useRef(null);
     const activeTaskId = todos[3].id;
+    const dispatch  = useDispatch();
+    const todos = useSelector(state => state.todos)
   
     const selectedTodo =
       (activeTaskId && todos.find(todo => todo.id === activeTaskId)) || null;
@@ -32,6 +25,14 @@ const Todo = () => {
   
     const handleCreateNewTodo = (e) => {
       e.preventDefault();
+      if(newTodoInput){
+        dispatch(createTodo({
+          id: uuid(),
+          task: newTodoInput,
+          isComplete: false
+        }))
+      }
+      setNewTodoInput("")
     };
   
     const handleSelectTodo = (todoId) => () => {};
@@ -39,7 +40,7 @@ const Todo = () => {
     const handleEdit = () => {
       if (!selectedTodo) return;
   
-      setEditTodoInput(selectedTodo.desc);
+      setEditTodoInput(selectedTodo.task);
       setIsEditMode(true);
     };
   
@@ -88,7 +89,7 @@ const Todo = () => {
                 key={todo.id}
                 onClick={handleSelectTodo(todo.id)}
               >
-                <span className="list-number">{i + 1})</span> {todo.desc}
+                <span className="list-number">{i + 1})</span> {todo.task}
               </li>
             ))}
           </ul>
@@ -103,7 +104,7 @@ const Todo = () => {
                     selectedTodo?.isComplete ? "done" : ""
                   }`}
                 >
-                  {selectedTodo.desc}
+                  {selectedTodo.task}
                 </span>
                 <div className="todo-actions">
                   <button onClick={handleEdit}>Edit</button>
@@ -128,4 +129,4 @@ const Todo = () => {
     );
 };
 
-export default Todo
+export default Todo;

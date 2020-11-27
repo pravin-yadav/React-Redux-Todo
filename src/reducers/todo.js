@@ -1,7 +1,16 @@
 import { CREATE_TODO, DELETE_TODO, EDIT_TODO } from "../constants"
+import { v1 as uuid } from 'uuid';
 
-export function todos(state = [], action) {
-    const { type,payload } = action
+const todo = [
+  {id: uuid(), task: "Learn React", isComplete: true} ,
+  {id: uuid(), task: "Learn Redux", isComplete: true},
+  {id: uuid(), task: "Javascript", isComplete: true},
+  {id: uuid(), task: "Learn Redux-Toolkit", isComplete: false},
+  {id: uuid(), task: "Learn Next", isComplete: false},
+]
+
+export function todos(state = todo, action) {
+    const { type,payload } = action || {}
     switch (type) {
       case CREATE_TODO:
         return [...state, payload]
