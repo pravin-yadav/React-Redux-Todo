@@ -1,9 +1,13 @@
+# TODO
+
 This Todo project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+
 
 ##### snapshots
 <div>
-    <img src="https://raw.github.com/pravin-yadav/Redux-Toolkit-Todo/main/assets/images/todo.png" width="800px" height="600px"/>
+    <img src="https://raw.github.com/pravin-yadav/Redux-Toolkit-Todo/main/screenshot.png" width="800px" height="600px"/>
 </div>
+
 
 ## Installation
 
