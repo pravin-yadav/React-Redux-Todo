@@ -10,7 +10,7 @@ class TodoInput extends React.Component{
                        <div className="input-group">
                            <div className="input-group-prepend">
                                <div className="input-group-text bg-primary text-white">
-                                 <i className="fas fa-book" />
+                               <i className="fa fa-tasks" aria-hidden="true"></i>
                                </div>
                            </div>
                            <input  

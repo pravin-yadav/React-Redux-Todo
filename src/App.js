@@ -1,8 +1,5 @@
 import React from 'react';
-import { v1 as uuid } from 'uuid';
-import TodoList from './components/TodoList';
 import TodoInput from './components/TodoInput';
-import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="container">
@@ -11,7 +8,6 @@ function App() {
             <h3 className="text-capitalize text-center">todo input</h3>
           </div>
         </div>
-
         <TodoInput />
     </div>
   );
