@@ -16,8 +16,8 @@ class TodoInput extends React.Component{
                            </div>
                            <input  
                            type="text"
-                           className="form-control text-capitalize"
-                           placeholder="create a task.. ."
+                           className="form-control"
+                           placeholder="Create a task.. ."
                            />
                        </div>
                        <button type="submit" className="btn btn-block btn-info mt-3">Create Task</button>

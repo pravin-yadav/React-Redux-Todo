@@ -8,11 +8,11 @@ class TodoList extends React.Component{
         return(
             <React.Fragment>
                <ul className="list-group my-5">
-                    <h6 className="mt-3" style={{fontSize: '20px'}}><span class="badge badge-secondary">TODO</span></h6>
+                    <h6 className="mt-3" style={{fontSize: '20px'}}><span className="badge badge-light">TODO</span></h6>
                         <TodoItem />
-                    <h6 className="mt-5" style={{fontSize: '20px'}}><span class="badge badge-secondary">STATUS</span></h6>
+                    <h6 className="mt-5" style={{fontSize: '20px'}}><span className="badge badge-light">STATUS</span></h6>
                         <TodoItemStatus />
-                    <button type="button" className="btn btn-block text-capitalize mt-5" style={{backgroundColor: '#d6d8d9', outline: 0, border: 'none'}}>Reset List</button>
+                    <button type="button" className="btn btn-block btn-secondary text-capitalize mt-5">Reset List</button>
                </ul>
             </React.Fragment>
         )

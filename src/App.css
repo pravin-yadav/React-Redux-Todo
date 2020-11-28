@@ -34,6 +34,13 @@ input[type="checkbox"] {
   height: 25px;
 }
 
+input[type="radio"] {
+  box-shadow: none;
+  outline: none !important;
+  width: 20px;
+  height: 20px;
+}
+
 input[type="text"]:focus {
   box-shadow: none;
   outline: none !important;
@@ -47,4 +54,12 @@ input[type="text"]:focus {
 .task-text{
   vertical-align: sub;
   vertical-align: -webkit-baseline-middle;
+}
+
+.bullet-badge{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #f00;
+  background-color: #f00;
 }
