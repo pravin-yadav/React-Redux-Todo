@@ -5,7 +5,6 @@ class TodoInput extends React.Component{
     render(){
         return(
             <React.Fragment>
-            <div className="mt-5 pt-5" />
                <div className="card card-body my-3">
                    <form>
                        <div className="input-group">

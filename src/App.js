@@ -7,6 +7,9 @@ import './App.css';
 function App() {
   return (
     <div className="container">
+        <div className="text-center">
+          <img src="/assets/images/todo.jpg" width="auto" height="300" alt="header_img"/>
+        </div>
         <TodoInput />
         <TodoList />
     </div>
