@@ -11,3 +11,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.btn{
+height: 50px;
+}
+
+.btn:focus {
+  box-shadow: none;
+  outline: none !important;
+}
+
+input[type="text"] {
+  box-shadow: none;
+  outline: none !important;
+  height: 50px;
+}
+
+input[type="checkbox"] {
+  box-shadow: none;
+  outline: none !important;
+  width: 25px;
+  height: 25px;
+}
+
+input[type="text"]:focus {
+  box-shadow: none;
+  outline: none !important;
+  height: 50px;
+}
+
+.container{
+  width: 860px;
+}
+
+.task-text{
+  vertical-align: sub;
+  vertical-align: -webkit-baseline-middle;
+}
