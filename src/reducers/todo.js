@@ -13,7 +13,7 @@ export function todos(state = todo, action) {
     const { type,payload } = action || {}
     switch (type) {
       case CREATE_TODO:
-        return [...state, payload]
+        return [payload, ...state]
       case EDIT_TODO:
           return state.map(todo => todo.id === payload.id ? {...todo, task: payload.data.task } : todo)
     case DELETE_TODO:
