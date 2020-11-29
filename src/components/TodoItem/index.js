@@ -10,8 +10,8 @@ const TodoItem = (props) => {
         dispatch(deleteTodo(todo))
     }    
     const todo = todos.map((todo, i) => 
-                <div class="card mt-2 mb-2 pointer">
-                    <div class="card-body d-flex justify-content-between">
+                <div key={todo + '_' + i} className="card mt-2 mb-2 pointer">
+                    <div className="card-body d-flex justify-content-between">
                     <div className="form-check">
                         <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" />
                         <label className="form-check-label" htmlFor="defaultCheck1"></label>

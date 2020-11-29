@@ -1,4 +1,4 @@
-import { CREATE_TODO, DELETE_TODO, UPDATE_TODO } from "../constants"
+import { CREATE_TODO, DELETE_TODO, UPDATE_TODO, RESET_TODO } from "../constants"
 import { v1 as uuid } from 'uuid';
 
 const todo = [
@@ -15,6 +15,8 @@ export function todos(state = todo, action) {
           return state.map(todo => todo.id === payload.id ? { ...todo, task: payload.task, } : todo)
     case DELETE_TODO:
         return state.filter(todo => todo.id !== payload.id)
+    case RESET_TODO:
+      return payload || []
       default:
         return state
     }

@@ -4,8 +4,8 @@ class TodoItemStatus extends React.Component{
     render(){
         return(
             <React.Fragment>
-                <div class="card mt-2 mb-2 pointer">
-                    <div class="card-body d-flex justify-content-between">
+                <div className="card mt-2 mb-2 pointer">
+                    <div className="card-body d-flex justify-content-between">
                         <div>
                             <i className="fa fa-dot-circle-o task-text" aria-hidden="true" style={{color: '#6c757d', fontSize: '18px'}}></i>
                             <span className="ml-3 task-text text-uppercase">Programming Tutorials</span>
@@ -15,8 +15,8 @@ class TodoItemStatus extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div class="card mt-2 mb-2 pointer">
-                    <div class="card-body d-flex justify-content-between">
+                <div className="card mt-2 mb-2 pointer">
+                    <div className="card-body d-flex justify-content-between">
                         <div>
                             <i className="fa fa-dot-circle-o task-text" aria-hidden="true" style={{color: '#6c757d', fontSize: '18px'}}></i>
                             <span className="ml-3 task-text" style={{textDecoration: 'line-through'}}>Adding to shopping cart.</span>

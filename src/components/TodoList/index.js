@@ -4,7 +4,7 @@ import TodoItemStatus from '../TodoItemStatus';
 
 
 const TodoList = (props) => {
-        const { todos, handleEditTask } = props || {}
+        const { todos, handleEditTask,resetList } = props || {}
         return(
             <React.Fragment>
                {todos.length ? 
@@ -13,7 +13,7 @@ const TodoList = (props) => {
                         <TodoItem todos={todos} handleEditTask={handleEditTask}/>
                     <h6 className="mt-5" style={{fontSize: '20px'}}><span className="badge badge-light">STATUS</span></h6>
                         <TodoItemStatus todos={todos} />
-                    <button type="button" className="btn btn-block btn-secondary text-uppercase mt-5">RESET</button>
+                    <button type="button" onClick={resetList} className="btn btn-block btn-secondary text-uppercase mt-5">RESET</button>
                </ul> : null}
             </React.Fragment>
         )
