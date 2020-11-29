@@ -1,19 +1,19 @@
 # TODO
 
-This Todo project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+This Todo project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) template.
 
 
 ##### snapshots
 <div>
-    <img src="https://raw.github.com/pravin-yadav/Redux-Toolkit-Todo/main/screenshot.png" width="800px" height="800px"/>
+    <img src="https://raw.github.com/pravin-yadav/Redux-hooks-Todo/main/screenshot.png" width="800px" height="800px"/>
 </div>
 
 <div>
-    <img align="left" src="https://raw.github.com/pravin-yadav/Redux-Toolkit-Todo/main/screenshot1.png" width="350px" height="350px"/>
+    <img align="left" src="https://raw.github.com/pravin-yadav/Redux-hooks-Todo/main/screenshot1.png" width="350px" height="350px"/>
 </div>
 
 <div>
-    <img align="right" src="https://raw.github.com/pravin-yadav/Redux-Toolkit-Todo/main/screenshot2.png" width="350px" height="350px"/>
+    <img align="right" src="https://raw.github.com/pravin-yadav/Redux-hooks-Todo/main/screenshot2.png" width="350px" height="350px"/>
 </div>
 
 
