@@ -3,10 +3,10 @@ import { useDispatch } from 'react-redux';
 import { deleteTodo } from '../../actions'
 
 const TodoItem = (props) => {
-    const { todos, handleEdit } = props || {}
+    const { todos, handleEditTask } = props || {}
     const dispatch = useDispatch();
 
-    const handleDelete = (todo) => {
+    const handleDeleteTask = (todo) => {
         dispatch(deleteTodo(todo))
     }    
     const todo = todos.map((todo, i) => 
@@ -14,13 +14,13 @@ const TodoItem = (props) => {
                     <div className="form-check">
                         <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" />
                         <label className="form-check-label" htmlFor="defaultCheck1"></label>
-                        <span className="text-muted ml-3 task-text">{todo.task}</span>
+                        <span className="ml-3 task-text text-dark">{todo.task}</span>
                     </div> 
                    <div className="todo-icon">
-                       <span onClick={() => handleEdit(true, todo)} className="mx-4 text-secondary pointer" style={{fontSize: 28, cursor: 'pointer'}}>
+                       <span onClick={() => handleEditTask(true, todo)} className="mx-4 text-secondary pointer" style={{fontSize: 28, cursor: 'pointer'}}>
                             <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
                        </span>
-                       <span onClick={() => handleDelete(todo)} className="mx-2 text-danger pointer" style={{fontSize: 28, cursor: 'pointer'}}>
+                       <span onClick={() => handleDeleteTask(todo)} className="mx-2 text-danger pointer" style={{fontSize: 28, cursor: 'pointer'}}>
                             <i className="fa fa-trash-o" aria-hidden="true"></i>
                        </span>
                    </div>

@@ -1,4 +1,4 @@
-import { CREATE_TODO, EDIT_TODO, DELETE_TODO, ACTIVE_TODO} from '../constants'
+import { CREATE_TODO, UPDATE_TODO, DELETE_TODO, ACTIVE_TODO} from '../constants'
 
 export function createTodo(data) {
     return {
@@ -7,9 +7,9 @@ export function createTodo(data) {
     }
   }
   
-  export function editTodo(data) {
+  export function updateTodo(data) {
     return {
-      type: EDIT_TODO,
+      type: UPDATE_TODO,
       payload: data
     }
   }

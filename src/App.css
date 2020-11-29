@@ -52,6 +52,9 @@ input[type="text"]:focus {
 }
 
 .task-text{
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 400;
   vertical-align: sub;
   vertical-align: -webkit-baseline-middle;
 }

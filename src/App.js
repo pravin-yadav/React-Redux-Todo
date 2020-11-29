@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux'; 
 import { useDispatch } from 'react-redux'; 
 import { v1 as uuid } from 'uuid'; 
-import {createTodo} from './actions'; 
+import {createTodo, updateTodo} from './actions'; 
 import TodoList from './components/TodoList';
 import TodoInput from './components/TodoInput';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,38 +10,46 @@ import './App.css';
 
 function App() {
   const todos = useSelector(state => state.todos);
-  const [newTodoInput, setNewTodoInput] = useState("");
+  const [changeTaskInput, setChangeTaskInput] = useState("");
+  const [updateTodoTask, setUpdateTodoTask] = useState({})
   const [isEdit, setIsEdit] = useState(false);
   const dispatch  = useDispatch();
 
   const handleInputChange = (e) => {
-    setNewTodoInput(e.target.value);
+    setChangeTaskInput(e.target.value);
   };
 
-  const handleCreateNewTodo = (e) => {
+  const handleCreateOrUpdateTask = (e) => {
     e.preventDefault();
-    if(newTodoInput){
-      dispatch(createTodo({
+    if(changeTaskInput && !isEdit){
+       dispatch(createTodo({
         id: uuid(),
-        task: newTodoInput,
+        task: changeTaskInput,
         isComplete: false
       }))
+    }else{
+      dispatch(updateTodo({
+        ...updateTodoTask,
+        task: changeTaskInput
+      }))
     }
-    setNewTodoInput(e.target.reset())
+    setChangeTaskInput(e.target.reset())
     setIsEdit(false)
   };
 
-  const handleEdit = (isEdit, todo) => {
+  const handleEditTask = (isEdit, todo) => {
     setIsEdit(isEdit)
-    setNewTodoInput(todo.task)
+    setChangeTaskInput(todo.task)
+    setUpdateTodoTask(todo)
   } 
+
   return (
     <div className="container">
         <div className="text-center">
           <img src="/assets/images/todo.jpg" width="auto" height="300" alt="header_img"/>
         </div>
-        <TodoInput handleInputChange={(e) => handleInputChange(e)} handleCreateNewTodo={handleCreateNewTodo} isEdit={isEdit} newTodoInput={newTodoInput} />
-        <TodoList todos={todos} handleEdit={handleEdit} />
+        <TodoInput handleInputChange={handleInputChange} handleCreateOrUpdateTask={handleCreateOrUpdateTask} isEdit={isEdit} changeTaskInput={changeTaskInput} />
+        <TodoList todos={todos} handleEditTask={handleEditTask} />
     </div>
   );
 }
