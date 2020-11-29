@@ -11,6 +11,7 @@ import './App.css';
 function App() {
   const todos = useSelector(state => state.todos);
   const [newTodoInput, setNewTodoInput] = useState("");
+  const [isEdit, setIsEdit] = useState(false);
   const dispatch  = useDispatch();
 
   const handleInputChange = (e) => {
@@ -27,16 +28,20 @@ function App() {
       }))
     }
     setNewTodoInput(e.target.reset())
+    setIsEdit(false)
   };
 
-  // const [isEdit, setIsEdit] = useState(false);
+  const handleEdit = (isEdit, todo) => {
+    setIsEdit(isEdit)
+    setNewTodoInput(todo.task)
+  } 
   return (
     <div className="container">
         <div className="text-center">
           <img src="/assets/images/todo.jpg" width="auto" height="300" alt="header_img"/>
         </div>
-        <TodoInput handleInputChange={handleInputChange} handleCreateNewTodo={handleCreateNewTodo} />
-        <TodoList todos={todos}/>
+        <TodoInput handleInputChange={(e) => handleInputChange(e)} handleCreateNewTodo={handleCreateNewTodo} isEdit={isEdit} newTodoInput={newTodoInput} />
+        <TodoList todos={todos} handleEdit={handleEdit} />
     </div>
   );
 }

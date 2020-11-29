@@ -15,7 +15,7 @@ export function todos(state = todo, action) {
       case CREATE_TODO:
         return [payload, ...state]
       case EDIT_TODO:
-          return state.map(todo => todo.id === payload.id ? {...todo, task: payload.data.task } : todo)
+          return state.map(todo => todo.id === payload.id ? {...todo, task: payload.task } : todo)
     case DELETE_TODO:
         return state.filter(todo => todo.id !== payload.id)
       default:
