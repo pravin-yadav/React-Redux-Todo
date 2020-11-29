@@ -1,28 +1,7 @@
-import React, {useState} from 'react';
-import { useDispatch } from 'react-redux'; 
-import { v1 as uuid } from 'uuid'; 
-import {createTodo} from '../../actions'; 
+import React from 'react';
 
-
-const TodoInput = () => {
-    const [newTodoInput, setNewTodoInput] = useState("");
-    const dispatch  = useDispatch();
-
-    const handleInputChange = (e) => {
-      setNewTodoInput(e.target.value);
-    };
-  
-    const handleCreateNewTodo = (e) => {
-      e.preventDefault();
-      if(newTodoInput){
-        dispatch(createTodo({
-          id: uuid(),
-          task: newTodoInput,
-          isComplete: false
-        }))
-      }
-      setNewTodoInput(e.target.reset())
-    };
+const TodoInput = (props) => {
+  const { handleCreateNewTodo,handleInputChange } = props || {}
         return(
             <React.Fragment>
                <div className="card card-body my-3">
