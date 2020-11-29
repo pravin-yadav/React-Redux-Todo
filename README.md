@@ -9,11 +9,11 @@ This Todo project was bootstrapped with [Create React App](https://github.com/fa
 </div>
 
 <div>
-    <img src="https://raw.github.com/pravin-yadav/Redux-Toolkit-Todo/main/screenshot1.png" width="350px" height="350px"/>
+    <img align="left" src="https://raw.github.com/pravin-yadav/Redux-Toolkit-Todo/main/screenshot1.png" width="350px" height="350px"/>
 </div>
 
 <div>
-    <img src="https://raw.github.com/pravin-yadav/Redux-Toolkit-Todo/main/screenshot2.png" width="350px" height="350px"/>
+    <img align="right" src="https://raw.github.com/pravin-yadav/Redux-Toolkit-Todo/main/screenshot2.png" width="350px" height="350px"/>
 </div>
 
 
