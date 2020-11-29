@@ -1,21 +1,36 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteTodo } from '../../actions'
+import { STATUS } from '../../constants';
 
 const TodoItem = (props) => {
-    const { todos, handleEditTask } = props || {}
+    const { todos, handleEditTask, handleStatus } = props || {}
     const dispatch = useDispatch();
 
     const handleDeleteTask = (todo) => {
         dispatch(deleteTodo(todo))
-    }    
+    }
+    
+    const handleChecked = (e,todo) => {
+        if(e.target.checked){
+            handleStatus(STATUS.PROGRESS, todo)
+        }else{
+            handleStatus('', todo)
+        }
+    }
+
+    const handleTextStriked = (todo) => {
+        let element = document.getElementById(todo.id);
+        element.style.textDecoration = 'line-through'
+        handleStatus(STATUS.COMPLETED, todo)
+    }
     const todo = todos.map((todo, i) => 
                 <div key={todo + '_' + i} className="card mt-2 mb-2 pointer">
                     <div className="card-body d-flex justify-content-between">
                     <div className="form-check">
-                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" />
-                        <label className="form-check-label" htmlFor="defaultCheck1"></label>
-                        <span className="ml-3 task-text text-dark">{todo.task}</span>
+                        <input onClick={(e) => handleChecked(e,todo)} className="form-check-input" type="checkbox" value="" id={todo + '_' + i} />
+                        <label className="form-check-label" htmlFor={todo + '_' + i}></label>
+                        <span id={todo.id} onDoubleClick={() => handleTextStriked(todo)} className="ml-3 task-text text-dark">{todo.task}</span>
                     </div> 
                    <div className="todo-icon">
                        <span onClick={() => handleEditTask(true, todo)} className="mx-4 text-secondary pointer" style={{fontSize: 24, cursor: 'pointer'}}>

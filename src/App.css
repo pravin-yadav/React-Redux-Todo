@@ -58,6 +58,7 @@ input[type="text"]:focus {
   font-weight: 400;
   vertical-align: sub;
   vertical-align: -webkit-baseline-middle;
+  user-select: none;
 }
 
 .pointer{
