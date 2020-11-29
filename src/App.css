@@ -30,8 +30,9 @@ input[type="text"] {
 input[type="checkbox"] {
   box-shadow: none;
   outline: none !important;
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
+  margin-top: 8px;
 }
 
 input[type="radio"] {
@@ -59,10 +60,6 @@ input[type="text"]:focus {
   vertical-align: -webkit-baseline-middle;
 }
 
-.bullet-badge{
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  color: #f00;
-  background-color: #f00;
+.pointer{
+  cursor: pointer;
 }
