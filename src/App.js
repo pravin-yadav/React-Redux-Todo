@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux'; 
 import { useDispatch } from 'react-redux'; 
 import { v1 as uuid } from 'uuid'; 
@@ -16,6 +16,16 @@ function App() {
   const [alert, setAlert] = useState({})
   const [isEdit, setIsEdit] = useState(false);
   const dispatch  = useDispatch();
+
+  useEffect(() => {
+    const alertTimeout = setTimeout(() => {
+      setAlert({})
+    }, 5000);
+
+    return () => {
+      clearTimeout(alertTimeout)
+    }
+  }, [alert])
 
   const handleInputChange = (e) => {
     setChangeTaskInput(e.target.value);
