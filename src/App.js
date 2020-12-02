@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux'; 
 import { v1 as uuid } from 'uuid'; 
 import {createTodo, resetTodo, updateTodo, taskStatus, deleteTodo} from './actions'; 
+import { ALERT_COLOR, ALERT_TEXT } from './constants';
 import TodoList from './components/TodoList';
 import TodoInput from './components/TodoInput';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { ALERT_COLOR, ALERT_TEXT } from './constants';
 
 function App() {
   const todos = useSelector(state => state.todos);

@@ -4,7 +4,12 @@ export const DELETE_TODO = 'DELETE_TODO';
 export const ACTIVE_TODO = 'ACTIVE_TODO';
 export const RESET_TODO = 'RESET_TODO';
 
-export const TASK_STATUS = 'TASK_STATUS' 
+export const TASK_STATUS = 'TASK_STATUS'; 
+
+export const CREATE_TASK_ALERT = 'CREATE_TASK_ALERT';
+export const UPDATE_TASK_ALERT = 'UPDATE_TASK_ALERT';
+export const DELETE_TASK_ALERT = 'DELETE_TASK_ALERT';
+export const RESET_TASK_ALERT = 'RESET_TASK_ALERT';
 
 export const STATUS = {
     PROGRESS:  'PROGRESS',
@@ -24,3 +29,4 @@ export const ALERT_COLOR = {
     DELETE: 'danger',
     WARNING: 'warning'
 }
+
