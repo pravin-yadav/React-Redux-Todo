@@ -17,7 +17,7 @@ export function alerts(state = alert, action){
         case RESET_TASK_ALERT:
             return { ...state, ...payload }
         case CLEAR_ALERT_TIMEOUT:
-            return state
+            return {...state, ...payload}
         default:
             return state
     }

@@ -3,31 +3,30 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux'; 
 import { v1 as uuid } from 'uuid'; 
 import {createTodo, resetTodo, updateTodo, taskStatus, deleteTodo} from './actions/todo'; 
+import { clearAlertTimeout, createAlert, deleteAlert, updateAlert, resetAlert } from './actions/alert';
 import { ALERT_COLOR, ALERT_TEXT } from './constants';
 import TodoList from './components/TodoList';
 import TodoInput from './components/TodoInput';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { createAlert, deleteAlert, updateAlert } from './actions/alert';
 
 function App() {
   const todos = useSelector(state => state.todos);
   const alert = useSelector(state => state.alerts)
   const [changeTaskInput, setChangeTaskInput] = useState("");
   const [updateTodoTask, setUpdateTodoTask] = useState({})
-  const [resetAlert, setResetAlert] = useState({})
   const [isEdit, setIsEdit] = useState(false);
   const dispatch  = useDispatch();
 
   useEffect(() => {
     const alertTimeout = setTimeout(() => {
-      setResetAlert({})
+      dispatch(clearAlertTimeout({text: '', color: ''}))
     }, 5000);
 
     return () => {
       clearTimeout(alertTimeout)
     }
-  }, [alert])
+  }, [alert, dispatch])
 
   const handleInputChange = (e) => {
     setChangeTaskInput(e.target.value);

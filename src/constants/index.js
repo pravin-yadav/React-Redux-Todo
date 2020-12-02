@@ -28,6 +28,6 @@ export const ALERT_COLOR = {
     CREATE: 'info',
     UPDATE: 'success',
     DELETE: 'danger',
-    WARNING: 'warning'
+    RESET: 'warning'
 }
 
