@@ -8,7 +8,7 @@ import TodoList from './components/TodoList';
 import TodoInput from './components/TodoInput';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { createAlert } from './actions/alert';
+import { createAlert, updateAlert } from './actions/alert';
 
 function App() {
   const todos = useSelector(state => state.todos);
@@ -47,7 +47,7 @@ function App() {
         ...updateTodoTask,
         task: changeTaskInput
       }))
-      // setAlert({text: ALERT_TEXT.UPDATE, color: ALERT_COLOR.UPDATE })
+      dispatch(updateAlert({text: ALERT_TEXT.UPDATE, color: ALERT_COLOR.UPDATE}))
     }
     setChangeTaskInput(e.target.reset())
     setIsEdit(false)
