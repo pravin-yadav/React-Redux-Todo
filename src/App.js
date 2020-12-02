@@ -34,7 +34,7 @@ function App() {
         ...updateTodoTask,
         task: changeTaskInput
       }))
-      setAlert({text: "New task has been successfully updated.", color: 'success'})
+      setAlert({text: "Task has been successfully updated.", color: 'success'})
     }
     setChangeTaskInput(e.target.reset())
     setIsEdit(false)
@@ -48,6 +48,7 @@ function App() {
   
   const handleDeleteTask = (todo) => {
     dispatch(deleteTodo(todo))
+    setAlert({text: "Task has been successfully deleted.", color: 'danger'})
   }
 
   const resetList = () => {
