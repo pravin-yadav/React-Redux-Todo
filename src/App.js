@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux'; 
 import { useDispatch } from 'react-redux'; 
 import { v1 as uuid } from 'uuid'; 
-import {createTodo, resetTodo, updateTodo, taskStatus, deleteTodo} from './actions'; 
+import {createTodo, resetTodo, updateTodo, taskStatus, deleteTodo} from './actions/todo'; 
 import { ALERT_COLOR, ALERT_TEXT } from './constants';
 import TodoList from './components/TodoList';
 import TodoInput from './components/TodoInput';
