@@ -53,6 +53,7 @@ function App() {
 
   const resetList = () => {
     dispatch(resetTodo([]))
+    setAlert({text: "Your todo has been successfully reset.", color: 'warning'})
   } 
 
   const handleStatus = (status, todo) => {
