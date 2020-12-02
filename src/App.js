@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux'; 
 import { useDispatch } from 'react-redux'; 
 import { v1 as uuid } from 'uuid'; 
-import {createTodo, resetTodo, updateTodo, taskStatus} from './actions'; 
+import {createTodo, resetTodo, updateTodo, taskStatus, deleteTodo} from './actions'; 
 import TodoList from './components/TodoList';
 import TodoInput from './components/TodoInput';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -27,7 +27,7 @@ function App() {
         task: changeTaskInput,
         status: ''
       }))
-    }else{
+    }else if(changeTaskInput && isEdit){
       dispatch(updateTodo({
         ...updateTodoTask,
         task: changeTaskInput
@@ -41,7 +41,11 @@ function App() {
     setIsEdit(isEdit)
     setChangeTaskInput(todo.task)
     setUpdateTodoTask(todo)
-  } 
+  }
+  
+  const handleDeleteTask = (todo) => {
+    dispatch(deleteTodo(todo))
+  }
 
   const resetList = () => {
     dispatch(resetTodo([]))
@@ -63,7 +67,7 @@ function App() {
           <img src="/assets/images/todo.jpg" width="auto" height="300" alt="header_img"/>
         </div>
         <TodoInput handleInputChange={handleInputChange} handleCreateOrUpdateTask={handleCreateOrUpdateTask} isEdit={isEdit} changeTaskInput={changeTaskInput} />
-        <TodoList todos={todos} handleEditTask={handleEditTask} resetList={resetList} handleStatus={handleStatus} />
+        <TodoList todos={todos} handleEditTask={handleEditTask} resetList={resetList} handleStatus={handleStatus} handleDeleteTask={handleDeleteTask} />
     </div>
   );
 }

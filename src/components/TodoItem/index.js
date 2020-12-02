@@ -4,18 +4,13 @@ import { deleteTodo } from '../../actions'
 import { STATUS } from '../../constants';
 
 const TodoItem = (props) => {
-    const { todos, handleEditTask, handleStatus } = props || {}
-    const dispatch = useDispatch();
+    const { todos, handleEditTask, handleStatus, handleDeleteTask } = props || {}
 
-    const handleDeleteTask = (todo) => {
-        dispatch(deleteTodo(todo))
-    }
-    
     const handleChecked = (e,todo) => {
         if(e.target.checked){
             handleStatus(STATUS.PROGRESS, todo)
         }else{
-            handleStatus('', todo)
+            handleStatus("TODO", todo)
         }
     }
 
