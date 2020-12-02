@@ -7,6 +7,7 @@ import TodoList from './components/TodoList';
 import TodoInput from './components/TodoInput';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { ALERT_COLOR, ALERT_TEXT } from './constants';
 
 function App() {
   const todos = useSelector(state => state.todos);
@@ -28,13 +29,13 @@ function App() {
         task: changeTaskInput,
         status: ''
       }))
-      setAlert({text: "New task has been successfully created.", color: 'info'})
+      setAlert({text: ALERT_TEXT.CREATE, color: ALERT_COLOR.CREATE})
     }else if(changeTaskInput && isEdit){
       dispatch(updateTodo({
         ...updateTodoTask,
         task: changeTaskInput
       }))
-      setAlert({text: "Task has been successfully updated.", color: 'success'})
+      setAlert({text: ALERT_TEXT.UPDATE, color: ALERT_COLOR.UPDATE })
     }
     setChangeTaskInput(e.target.reset())
     setIsEdit(false)
@@ -48,12 +49,12 @@ function App() {
   
   const handleDeleteTask = (todo) => {
     dispatch(deleteTodo(todo))
-    setAlert({text: "Task has been successfully deleted.", color: 'danger'})
+    setAlert({text: ALERT_TEXT.DELETE, color: ALERT_COLOR.DELETE})
   }
 
   const resetList = () => {
     dispatch(resetTodo([]))
-    setAlert({text: "Your todo has been successfully reset.", color: 'warning'})
+    setAlert({text: ALERT_TEXT.RESET, color: ALERT_COLOR.WARNING})
   } 
 
   const handleStatus = (status, todo) => {

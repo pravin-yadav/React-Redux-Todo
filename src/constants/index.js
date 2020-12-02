@@ -10,3 +10,17 @@ export const STATUS = {
     PROGRESS:  'PROGRESS',
     COMPLETED: 'COMPLETED'
 } 
+
+export const ALERT_TEXT = {
+    CREATE: 'New task has been successfully created.',
+    UPDATE: 'Task has been successfully updated.',
+    DELETE: 'Task has been successfully deleted.',
+    RESET: 'Your todo has been successfully reset'
+}
+
+export const ALERT_COLOR = {
+    CREATE: 'info',
+    UPDATE: 'success',
+    DELETE: 'danger',
+    WARNING: 'warning'
+}
