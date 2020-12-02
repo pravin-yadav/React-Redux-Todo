@@ -12,6 +12,7 @@ function App() {
   const todos = useSelector(state => state.todos);
   const [changeTaskInput, setChangeTaskInput] = useState("");
   const [updateTodoTask, setUpdateTodoTask] = useState({})
+  const [alert, setAlert] = useState({})
   const [isEdit, setIsEdit] = useState(false);
   const dispatch  = useDispatch();
 
@@ -27,6 +28,7 @@ function App() {
         task: changeTaskInput,
         status: ''
       }))
+      setAlert({text: "New task has been successfully created.", color: 'info'})
     }else if(changeTaskInput && isEdit){
       dispatch(updateTodo({
         ...updateTodoTask,
@@ -60,9 +62,9 @@ function App() {
 
   return (
     <div className="container">
-        <div class="alert alert-primary text-center" role="alert">
-                This is a primary alert—check it out!
-        </div>
+        {alert && <div class={`alert alert-${alert.color} text-center`} role="alert">
+                {alert.text}
+        </div>}
         <div className="text-center">
           <img src="/assets/images/todo.jpg" width="auto" height="300" alt="header_img"/>
         </div>
