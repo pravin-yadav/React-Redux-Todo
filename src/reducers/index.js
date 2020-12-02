@@ -1,8 +1,11 @@
-const { combineReducers } = require("redux");
-const { todos } = require("./todo");
+import { combineReducers } from  "redux";
+import { todos } from "./todo";
+import { alerts } from "./alerts";
+
 
 const reducers = combineReducers({
-    todos: todos
+    todos: todos,
+    alerts: alerts
 })
 
 export default reducers;

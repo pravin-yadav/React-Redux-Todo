@@ -8,18 +8,20 @@ import TodoList from './components/TodoList';
 import TodoInput from './components/TodoInput';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { createAlert } from './actions/alert';
 
 function App() {
   const todos = useSelector(state => state.todos);
+  const alert = useSelector(state => state.alerts)
   const [changeTaskInput, setChangeTaskInput] = useState("");
   const [updateTodoTask, setUpdateTodoTask] = useState({})
-  const [alert, setAlert] = useState({})
+  const [resetAlert, setResetAlert] = useState({})
   const [isEdit, setIsEdit] = useState(false);
   const dispatch  = useDispatch();
 
   useEffect(() => {
     const alertTimeout = setTimeout(() => {
-      setAlert({})
+      setResetAlert({})
     }, 5000);
 
     return () => {
@@ -39,13 +41,13 @@ function App() {
         task: changeTaskInput,
         status: ''
       }))
-      setAlert({text: ALERT_TEXT.CREATE, color: ALERT_COLOR.CREATE})
+      dispatch(createAlert({text: ALERT_TEXT.CREATE, color: ALERT_COLOR.CREATE}))
     }else if(changeTaskInput && isEdit){
       dispatch(updateTodo({
         ...updateTodoTask,
         task: changeTaskInput
       }))
-      setAlert({text: ALERT_TEXT.UPDATE, color: ALERT_COLOR.UPDATE })
+      // setAlert({text: ALERT_TEXT.UPDATE, color: ALERT_COLOR.UPDATE })
     }
     setChangeTaskInput(e.target.reset())
     setIsEdit(false)
@@ -59,12 +61,12 @@ function App() {
   
   const handleDeleteTask = (todo) => {
     dispatch(deleteTodo(todo))
-    setAlert({text: ALERT_TEXT.DELETE, color: ALERT_COLOR.DELETE})
+    // setAlert({text: ALERT_TEXT.DELETE, color: ALERT_COLOR.DELETE})
   }
 
   const resetList = () => {
     dispatch(resetTodo([]))
-    setAlert({text: ALERT_TEXT.RESET, color: ALERT_COLOR.WARNING})
+    // setAlert({text: ALERT_TEXT.RESET, color: ALERT_COLOR.WARNING})
   } 
 
   const handleStatus = (status, todo) => {

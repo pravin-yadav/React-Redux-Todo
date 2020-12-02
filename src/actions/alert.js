@@ -1,4 +1,4 @@
-import { CREATE_TASK_ALERT, DELETE_TASK_ALERT, RESET_TASK_ALERT, UPDATE_TASK_ALERT } from "../constants";
+import { CLEAR_ALERT_TIMEOUT, CREATE_TASK_ALERT, DELETE_TASK_ALERT, RESET_TASK_ALERT, UPDATE_TASK_ALERT } from "../constants";
 
 export function createAlert(data){
     return {
@@ -24,6 +24,13 @@ export function deleteAlert(data){
 export function resetAlert(data){
     return{
         type: RESET_TASK_ALERT,
+        payload: data
+    }
+}
+
+export function clearAlertTimeout(data){
+    return{
+        type: CLEAR_ALERT_TIMEOUT,
         payload: data
     }
 }
