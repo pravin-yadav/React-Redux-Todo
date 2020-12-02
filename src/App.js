@@ -56,6 +56,9 @@ function App() {
 
   return (
     <div className="container">
+        <div class="alert alert-primary text-center" role="alert">
+                This is a primary alert—check it out!
+        </div>
         <div className="text-center">
           <img src="/assets/images/todo.jpg" width="auto" height="300" alt="header_img"/>
         </div>
