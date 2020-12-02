@@ -8,7 +8,7 @@ import TodoList from './components/TodoList';
 import TodoInput from './components/TodoInput';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { createAlert, updateAlert } from './actions/alert';
+import { createAlert, deleteAlert, updateAlert } from './actions/alert';
 
 function App() {
   const todos = useSelector(state => state.todos);
@@ -61,7 +61,7 @@ function App() {
   
   const handleDeleteTask = (todo) => {
     dispatch(deleteTodo(todo))
-    // setAlert({text: ALERT_TEXT.DELETE, color: ALERT_COLOR.DELETE})
+    dispatch(deleteAlert({text: ALERT_TEXT.DELETE, color: ALERT_COLOR.DELETE}))
   }
 
   const resetList = () => {
