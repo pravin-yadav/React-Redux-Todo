@@ -34,6 +34,7 @@ function App() {
         ...updateTodoTask,
         task: changeTaskInput
       }))
+      setAlert({text: "New task has been successfully updated.", color: 'success'})
     }
     setChangeTaskInput(e.target.reset())
     setIsEdit(false)
