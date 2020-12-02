@@ -66,7 +66,7 @@ function App() {
 
   const resetList = () => {
     dispatch(resetTodo([]))
-    // setAlert({text: ALERT_TEXT.RESET, color: ALERT_COLOR.WARNING})
+    dispatch(resetAlert({text: ALERT_TEXT.RESET, color: ALERT_COLOR.RESET}))
   } 
 
   const handleStatus = (status, todo) => {
