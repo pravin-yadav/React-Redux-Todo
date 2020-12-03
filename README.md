@@ -5,16 +5,9 @@ This Todo project was bootstrapped with [Create React App](https://github.com/fa
 ##### snapshots
 <div>
     <img src="https://raw.github.com/pravin-yadav/React-Redux-Todo/main/screenshot.png" width="800px" height="800px"/>
-</div>
-
-<div>
     <img align="left" src="https://raw.github.com/pravin-yadav/React-Redux-Todo/main/screenshot1.png" width="50%" height="350px"/>
-</div>
-
-<div>
     <img align="right" src="https://raw.github.com/pravin-yadav/React-Redux-Todo/main/screenshot2.png" width="50%" height="350px"/>
 </div>
-
 
 ## Installation
 
